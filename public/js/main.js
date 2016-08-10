@@ -58,8 +58,6 @@ $(document).ready(function() {
   });
 
   $('.sel-campus').on('click', (event) => {
-    event.preventDefault();  
-  
     const self = $(this)
     const moduleId = self.data('moduleId')
     const campusId = self.data('campusId')
@@ -70,24 +68,6 @@ $(document).ready(function() {
       url: url,
       type: "GET",
       dataType: "json"
-    })
-    .done( (data) => {
-      console.log(data);
-      // $.each(data, (i, val) => {
-      //   html_str += (`
-      //     <div class="col-lg-6 campus-cont">
-      //       <a href="/campus/`+ val._id +`" class="sel-campus">
-      //         <div class="col-xs-2">
-      //           <img class='campus-icon' src='./img/click.png' />
-      //         </div>
-      //         <div class="col-xs-10">
-      //           <p style="color:`+ val.color +`; font-size: 18px !important;">`+ val.city + `</p>
-      //           <p class="text-muted">`+ val.country +`</p>
-      //         </div>
-      //       </a>
-      //     </div>
-      //   `);
-      // });
     });
   });
 

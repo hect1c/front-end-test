@@ -20,8 +20,8 @@ each val in programs
                     h4 #{val.module.city}
                     h6 #{val.module.country}
                   unless val.main
-                    div(class='reselect', style=set_bg)
-                      a(href='#', data-toggle="modal", data-target='#campusModal', data-title=val.title, data-id=val.id)
+                    a(href='#', data-toggle="modal", data-target='#campusModal', data-title=val.title, data-id=val.id)
+                      div(class='reselect', style=set_bg)
                         img(src="./img/click.png", class="invert", style="padding-top: 25px;" height='50', width='40')
             else
               a(href='#', data-toggle="modal", data-target='#campusModal', data-title=val.title, data-id=val.id)
