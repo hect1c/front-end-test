@@ -155,4 +155,16 @@
   width: 50px;
 }
 
-.invert {-webkit-filter: invert(100%); filter: invert(100%);}
+.invert {
+  -webkit-filter: invert(100%); 
+  filter: invert(100%);
+}
+
+.lead {
+  width: 55%;
+}
+
+.breadcrumb {
+  background-color: transparent;
+  padding: 8px 0px;
+}
