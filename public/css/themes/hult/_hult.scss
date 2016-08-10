@@ -1,4 +1,74 @@
+///////////
+// Header
+///////////
+
+.header {
+  z-index: 1;
+  position: relative;
+}
+
+.header .skew:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  overflow: visible;
+  width: 100%;
+  height: 250px;
+  background: #a53d3f; /* Old browsers */
+  background: -moz-linear-gradient(left, #a53d3f 0%, #770158 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, #a53d3f 0%,#770158 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, #a53d3f 0%,#770158 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a53d3f', endColorstr='#770158',GradientType=1 ); /* IE6-9 */
+  z-index: -1;
+  -webkit-transform: skewY(-2deg);
+  -moz-transform: skewY(-2deg);
+  -ms-transform: skewY(-2deg);
+  -o-transform: skewY(-2deg);
+  transform: skewY(-2deg);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: initial;
+}
+
+.header .skew .header-inner {
+  padding: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header a {
+  color: white;
+  text-decoration: none;
+}
+
+.header-info a {
+  padding-right: 5px;
+  margin-bottom: 10px;
+  margin: 10px;
+}
+
+.profile-pic {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+}
+
+.circle {
+  border: 2px solid #FFF;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+}
+
+.breadcrumb {
+  background-color: transparent;
+  padding: 8px 0px;
+}
+
+//////////
 // Panel
+/////////
+
 
 .panel {
   margin-bottom: $line-height-computed;
@@ -14,6 +84,80 @@
   border-bottom: 2px dashed $passive-bg-color;
   text-align: center;
 }
+
+//////////
+// Modal
+/////////
+
+
+.modal-content {
+  position: relative;
+  background-color: $modal-content-bg;
+  border: 1px solid $modal-content-fallback-border-color; //old browsers fallback (ie8 etc)
+  border: 1px solid $modal-content-border-color;
+  border-radius: 0px;
+  @include box-shadow(0 3px 9px rgba(0,0,0,.5));
+  background-clip: padding-box;
+  // Remove focus outline from opened modal
+  outline: 0;
+}
+
+.modal-header {
+  color: $heading-bg-color;
+  background-color: $brand-primary;
+}
+
+.modal-header .close {
+  color: $heading-bg-color;
+}
+
+
+/////////////////////
+// Module container
+/////////////////////
+
+.module-main .panel-body {
+  padding: 0;
+}
+
+.module-main .campus {
+  height: 230px;
+  margin-top: 0;
+}
+
+.module-main .panel-body {
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+}
+
+
+.module .modal-body {
+  height: 400px;
+}
+
+.modal-footer {
+  padding: 5px;
+  background-color: $brand-primary;
+}
+
+.module .module-content {
+  padding-top: 20px;
+  margin-top: 10px;
+}
+
+.module .module-content, .col-lg-6 {
+  padding-left: 0px;
+}
+
+.module .module-content, p {
+  padding-left: 5px;
+  margin-bottom: 0px;
+}
+
+//////////
+// Misc
+//////////
 
 .blur {
   index: 10;
@@ -73,73 +217,6 @@
   width: 50px !important;
 }
 
-// Actual modal
-.modal-content {
-  position: relative;
-  background-color: $modal-content-bg;
-  border: 1px solid $modal-content-fallback-border-color; //old browsers fallback (ie8 etc)
-  border: 1px solid $modal-content-border-color;
-  border-radius: 0px;
-  @include box-shadow(0 3px 9px rgba(0,0,0,.5));
-  background-clip: padding-box;
-  // Remove focus outline from opened modal
-  outline: 0;
-}
-
-.modal-header {
-  color: $heading-bg-color;
-  background-color: $brand-primary;
-}
-
-.modal-header .close {
-  color: $heading-bg-color;
-}
-
-/**
- * Module container
- */
-
-//Main container
-
-.module-main .panel-body {
-  padding: 0;
-}
-
-.module-main .campus {
-  height: 230px;
-  margin-top: 0;
-}
-
-.module-main .panel-body {
-  border-left: none;
-  border-right: none;
-  border-bottom: none;
-}
-
-
-
-.module .modal-body {
-  height: 400px;
-}
-
-.modal-footer {
-  padding: 5px;
-  background-color: $brand-primary;
-}
-
-.module .module-content {
-  padding-top: 20px;
-  margin-top: 10px;
-}
-
-.module .module-content, .col-lg-6 {
-  padding-left: 0px;
-}
-
-.module .module-content, p {
-  padding-left: 5px;
-  margin-bottom: 0px;
-}
 
 .campus-cont {
   margin-bottom: 15px;
@@ -164,7 +241,3 @@
   width: 55%;
 }
 
-.breadcrumb {
-  background-color: transparent;
-  padding: 8px 0px;
-}
