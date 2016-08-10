@@ -1,13 +1,13 @@
 each val in programs
-  - var set_module = ( val.main ? 'module-main' : 'module' )
-  - var has_module = ( val.module ? 'background-color: ' + val.module.color : '' )
+  - var set_class = ( val.module ? 'module-main' : 'module' )
+  - var set_bg = ( val.module ? 'background-color: ' + val.module.color : '' )
   .col-sm-4
     h2= val.title
       if val.main
         span.home (home)
-    div(class=set_module)
+    div(class=set_class)
       div(class='panel panel-default')
-        div(class='panel-heading', style=has_module)
+        div(class='panel-heading', style=set_bg)
           h4.panel-title= val.description
         .panel-body
           .campus
@@ -15,10 +15,14 @@ each val in programs
               a(href="#")
                 img(src=val.module.img, height="100%", width="100%")
                 .meta-info
-                  div(class='glass', style=has_module)
+                  div(class='glass', style=set_bg)
                   #textarea
                     h4 #{val.module.city}
                     h6 #{val.module.country}
+                  unless val.main
+                    div(class='reselect', style=set_bg)
+                      a(href='#', data-toggle="modal", data-target='#campusModal', data-title=val.title, data-id=val.id)
+                        img(src="./img/click.png", class="invert", style="padding-top: 25px;" height='50', width='40')
             else
               a(href='#', data-toggle="modal", data-target='#campusModal', data-title=val.title, data-id=val.id)
                 img(src="./img/click.png", height='50', width='50')

@@ -28,7 +28,7 @@ fixtures({
       city: 'San Francisco',
       country: 'United States of America',
       color: "#b32c1a",
-      img: "./img/click.png"
+      img: "./img/san.jpg"
     },
     {
       city: 'London',
@@ -40,25 +40,25 @@ fixtures({
       city: 'Dubai',
       country: 'United Arab of Emirates',
       color: "#305935",
-      img: "./img/click.png"
+      img: "./img/dubai.jpg"
     },
     {
       city: 'Shanghai',
       country: 'China',
       color: "#338d81",
-      img: "./img/click.png"
+      img: "./img/shanghai.JPG"
     },
     {
       city: 'New York',
       country: 'United States of America',
       color: "#ff6000",
-      img: "./img/click.png"
+      img: "./img/new_york.jpg"
     },
     {
       city: 'Ashridge',
       country: 'United States of America',
       color: "#94d600",
-      img: "./img/click.png"
+      img: "./img/ashridge.jpg"
     }
   ]
 }, (err, data) => {

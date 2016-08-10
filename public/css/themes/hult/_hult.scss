@@ -110,9 +110,6 @@
   margin-top: 0;
 }
 
-.module-main .campus img {
-}
-
 .module-main .panel-body {
   border-left: none;
   border-right: none;
@@ -147,3 +144,15 @@
 .campus-cont {
   margin-bottom: 15px;
 }
+
+.reselect {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 5;
+  float: right;
+  height: 70px;
+  width: 50px;
+}
+
+.invert {-webkit-filter: invert(100%); filter: invert(100%);}

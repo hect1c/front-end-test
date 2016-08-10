@@ -42,7 +42,7 @@ $(document).ready(function() {
         //add no rotation
         modal.find('.module-content').append(`
           <div class="col-lg-6">
-          <a href="/program/" class="sel-campus">
+          <a href="/program/`+ moduleId +`/1" class="sel-campus">
             <div class="col-sm-2">
               <img class='campus-icon' src='./img/click.png' />
             </div>
