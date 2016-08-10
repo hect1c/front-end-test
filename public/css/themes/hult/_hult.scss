@@ -1,0 +1,149 @@
+// Panel
+
+.panel {
+  margin-bottom: $line-height-computed;
+  background-color: $panel-bg;
+  border: 1px dashed transparent;
+  border-radius: $panel-border-radius;
+  @include box-shadow(0 1px 1px rgba(0,0,0,.05));
+}
+
+.panel-body {
+  border-left: 2px dashed $passive-bg-color;
+  border-right: 2px dashed $passive-bg-color;
+  border-bottom: 2px dashed $passive-bg-color;
+  text-align: center;
+}
+
+.blur {
+  index: 10;
+  filter: blur(10px);
+  -webkit-filter: blur(10px);
+  -moz-filter: blur(10px);
+  -o-filter: blur(10px);
+  -ms-filter: blur(10px);
+  overflow: hidden;
+}
+
+.meta-info {
+  position: absolute;
+  bottom: 20px;
+  height: 70px;
+  width: 359px;
+}
+
+.blur:after {
+  background: rgba(255, 255, 255, .2);
+}
+
+.glass {
+  height: 100%;
+  opacity: 0.4;
+  filter: blur(0.2px);
+  -webkit-filter: blur(0.2px);
+  -moz-filter: blur(0.2px);
+  -o-filter: blur(0.2px);
+  -ms-filter: blur(0.2px);
+  overflow:hidden;
+}
+
+#textarea {
+  position: absolute;
+  height: 30px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 10;
+  padding-left: 10px;
+}
+
+#textarea h4, h6 {
+  color: white;
+  text-align: left;
+}
+
+.campus {
+  height: 128px;
+  margin-top: 70px;
+}
+
+.campus-icon {
+  height: 50px !important;
+  width: 50px !important;
+}
+
+// Actual modal
+.modal-content {
+  position: relative;
+  background-color: $modal-content-bg;
+  border: 1px solid $modal-content-fallback-border-color; //old browsers fallback (ie8 etc)
+  border: 1px solid $modal-content-border-color;
+  border-radius: 0px;
+  @include box-shadow(0 3px 9px rgba(0,0,0,.5));
+  background-clip: padding-box;
+  // Remove focus outline from opened modal
+  outline: 0;
+}
+
+.modal-header {
+  color: $heading-bg-color;
+  background-color: $brand-primary;
+}
+
+.modal-header .close {
+  color: $heading-bg-color;
+}
+
+/**
+ * Module container
+ */
+
+//Main container
+
+.module-main .panel-body {
+  padding: 0;
+}
+
+.module-main .campus {
+  height: 230px;
+  margin-top: 0;
+}
+
+.module-main .campus img {
+}
+
+.module-main .panel-body {
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+}
+
+
+
+.module .modal-body {
+  height: 400px;
+}
+
+.modal-footer {
+  padding: 5px;
+  background-color: $brand-primary;
+}
+
+.module .module-content {
+  padding-top: 20px;
+  margin-top: 10px;
+}
+
+.module .module-content, .col-lg-6 {
+  padding-left: 0px;
+}
+
+.module .module-content, p {
+  padding-left: 5px;
+  margin-bottom: 0px;
+}
+
+.campus-cont {
+  margin-bottom: 15px;
+}

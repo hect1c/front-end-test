@@ -1,27 +1,21 @@
 extends layout
 
 block content
-  h1 Hackathon Starter
-  p.lead A boilerplate for Node.js web applications.
-  hr
+  ol.breadcrumb
+    li
+      a(href='#') Dashboard
+      a(href='#') Rotation Page
+  h1 Define your rotation experience
+  p.lead Immerse yourself in up to three of the world's most existing cities and gain an invaluable global perspective - all without interrupting the studies.
   .row
-    .col-sm-6
-      h2 Heading
-      p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-      p
-        a.btn.btn-default(href='#', role='button') View details »
-    .col-sm-6
-      h2 Heading
-      p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-      p
-        a.btn.btn-default(href='#', role='button') View details »
-    .col-sm-6
-      h2 Heading
-      p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-      p
-        a.btn.btn-default(href='#', role='button') View details »
-    .col-sm-6
-      h2 Heading
-      p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-      p
-        a.btn.btn-default(href='#', role='button') View details »
+    include partials/modules
+  .row
+    .col-sm-4
+      h3 Your home campus
+      p Students can choose from five home campuses - Boston, San Francisco, London or Dubai. Your home campus is where you complete the core of your studies and where you'll be based for about ten months of the year. You can choose to stay at your home campus for the entire length of your program if you prefer not to rotate.
+    .col-sm-4
+      h3 Your first rotation
+      p In your penultimate module, Module D, you have the option of taking electives and spending six weeks at any of Hult's home campuses, or our rotation centers in Shanghai and New York. You can choose to stay for the next module and extend you stay for twelve weeks if you prefer to only rotate once.
+    .col-sm-4
+      h3 Where to next?
+      p For your final module, Module E, you can choose to take electives and spend six weeks at any of Hult's seven campuses worldwide. That includes all five of our home campuses, and our rotation centers in Shanghai, New York, and Ashridge Estate, UK.

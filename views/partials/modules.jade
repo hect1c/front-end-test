@@ -1,0 +1,37 @@
+each val in programs
+  - var set_module = ( val.main ? 'module-main' : 'module' )
+  - var has_module = ( val.module ? 'background-color: ' + val.module.color : '' )
+  .col-sm-4
+    h2= val.title
+      if val.main
+        span.home (home)
+    div(class=set_module)
+      div(class='panel panel-default')
+        div(class='panel-heading', style=has_module)
+          h4.panel-title= val.description
+        .panel-body
+          .campus
+            if val.main
+              a(href="#")
+                img(src=val.module.img, height="100%", width="100%")
+                .meta-info
+                  div(class='glass', style=has_module)
+                  #textarea
+                    h4 #{val.module.city}
+                    h6 #{val.module.country}
+            else
+              a(href='#', data-toggle="modal", data-target='#campusModal', data-id=val.title)
+                img(src="./img/click.png", height='50', width='50')
+                p Click to choose a campus
+
+div(class="modal fade", id="campusModal", tabindex="-1", role="dialog", aria-labelledby="myModalLabel", aria-hidden="true")
+  .modal-dialog
+    .modal-content
+      .modal-header
+        button(type="button", class="close", data-dismiss="modal", aria-label="Close")
+          span(aria-hidden="true") Cancel &times;
+        h4(class="modal-title", id="myModalLabel") Select your campus rotation
+      .modal-body
+        h5.module-title
+        .row.module-content
+      .modal-footer
