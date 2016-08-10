@@ -11,7 +11,7 @@ each val in programs
           h4.panel-title= val.description
         .panel-body
           .campus
-            if val.main
+            if val.module
               a(href="#")
                 img(src=val.module.img, height="100%", width="100%")
                 .meta-info
@@ -20,7 +20,7 @@ each val in programs
                     h4 #{val.module.city}
                     h6 #{val.module.country}
             else
-              a(href='#', data-toggle="modal", data-target='#campusModal', data-id=val.title)
+              a(href='#', data-toggle="modal", data-target='#campusModal', data-title=val.title, data-id=val.id)
                 img(src="./img/click.png", height='50', width='50')
                 p Click to choose a campus
 

@@ -130,7 +130,9 @@ app.get('/account/unlink/:provider', passportConfig.isAuthenticated, userControl
  * Campus routes.
  */
 app.get('/campus', moduleController.getAllCampus);
-app.get('/campus/:id', moduleController.setCampus);
+app.get('/program/:moduleId/:campusId', moduleController.setCampus);
+
+// app.post('/campus/add', moduleController.setCampus);
 
 /**
  * OAuth authentication routes. (Sign in)

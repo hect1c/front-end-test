@@ -2,9 +2,11 @@ $(document).ready(function() {
   //load modal on module click
   $('.campus').on('click', function(event){
     $('#campusModal').on('show.bs.modal', function (event) {
-      var module = $(event.relatedTarget) // Module that triggered the modal
-      var moduleTitle = module.data('id') // Extract info from data-* attributes
-      var modal = $(this)
+
+      const modal = $(this)
+      const module = $(event.relatedTarget) // Module that triggered the modal
+      const moduleTitle = module.data('title') // Extract info from data-* attributes
+      const moduleId = module.data('id')
 
       modal.find('.module-title').text('Available campus for ' + moduleTitle)
 
@@ -13,22 +15,24 @@ $(document).ready(function() {
       //Ajax Request
       $.ajax({
         url: "/campus",
-        method: "GET",
+        type: "GET",
         dataType: "json"
       })
       .done( (data) => {
         $.each(data, (i, val) => {
           html_str += (`
             <div class="col-lg-6 campus-cont">
-              <a href="/campus/`+ val._id +`" class="sel-campus">
-                <div class="col-xs-2">
-                  <img class='campus-icon' src='./img/click.png' />
-                </div>
-                <div class="col-xs-10">
-                  <p style="color:`+ val.color +`; font-size: 18px !important;">`+ val.city + `</p>
-                  <p class="text-muted">`+ val.country +`</p>
-                </div>
-              </a>
+                <a href="/program/`+ moduleId +`/`+ val._id +`" data-moduleId="`+ moduleId +`" data-campusId="`+ val._id +`" class="sel-campus">
+                    <input type="hidden" name="campusId" value="`+ val._id +`">
+                    <input type="hidden" name="moduleId" value="`+ moduleId +`">
+                  <div class="col-xs-2">
+                    <img class='campus-icon' src='./img/click.png' />
+                  </div>
+                  <div class="col-xs-10">
+                    <p style="color:`+ val.color +`; font-size: 18px !important;">`+ val.city + `</p>
+                    <p class="text-muted">`+ val.country +`</p>
+                  </div>
+                </a>
             </div>
           `);
         });
@@ -38,7 +42,7 @@ $(document).ready(function() {
         //add no rotation
         modal.find('.module-content').append(`
           <div class="col-lg-6">
-          <a href="/campus/57a8ffdd1a4152884727a6d9" class="sel-campus">
+          <a href="/program/" class="sel-campus">
             <div class="col-sm-2">
               <img class='campus-icon' src='./img/click.png' />
             </div>
@@ -54,15 +58,17 @@ $(document).ready(function() {
   });
 
   $('.sel-campus').on('click', (event) => {
-    event.preventDefault();
+    event.preventDefault();  
   
     const self = $(this)
-    const url = self.attr('href');
+    const moduleId = self.data('moduleId')
+    const campusId = self.data('campusId')
+    const url = self.attr('href')
 
     //Ajax Request
     $.ajax({
       url: url,
-      method: "POST",
+      type: "GET",
       dataType: "json"
     })
     .done( (data) => {
