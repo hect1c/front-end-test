@@ -8997,7 +8997,8 @@ button.close {
   margin-bottom: 0px; }
 
 footer {
-  height: 100px;
+  z-index: 3;
+  height: 150px !important;
   background: #a53d3f;
   /* Old browsers */
   background: -moz-linear-gradient(left, #a53d3f 0%, #770158 100%);
@@ -9007,8 +9008,7 @@ footer {
   background: linear-gradient(to right, #a53d3f 0%, #770158 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a53d3f', endColorstr='#770158',GradientType=1 );
-  /* IE6-9 */
-  padding-bottom: 70px; }
+  /* IE6-9 */ }
 
 .footer {
   margin-top: 50px;
@@ -9016,7 +9016,6 @@ footer {
   background-color: #ededed; }
 
 .btm-footer {
-  margin-top: 100px;
   z-index: 1;
   position: relative; }
 
@@ -9024,10 +9023,9 @@ footer {
   content: '';
   position: absolute;
   left: 0;
-  bottom: 20px;
+  bottom: 0;
   width: 100%;
   height: 150px;
-  padding-top: 50px;
   background: #a53d3f;
   /* Old browsers */
   background: -moz-linear-gradient(left, #a53d3f 0%, #770158 100%);
@@ -9043,13 +9041,21 @@ footer {
   -moz-transform: skewY(-2deg);
   -ms-transform: skewY(-2deg);
   -o-transform: skewY(-2deg);
-  transform: skewY(-2deg);
-  overflow: visible; }
+  transform: skewY(-2deg); }
 
-.btm-footer .skew .header-inner {
+.btm-footer .skew .footer-inner {
   padding: 20px;
+  margin-top: 50px;
   margin-left: auto;
   margin-right: auto; }
+
+.footer-info {
+  margin: 20px;
+  color: white;
+  font-size: 14px; }
+
+.footer-info .col-sm-8 {
+  height: 15px; }
 
 .blur {
   index: 10;
