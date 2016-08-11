@@ -26,6 +26,10 @@ cd front-end-test
 npm install
 
 npm start
+
+# Visit the following url in your preferred browser
+http://localhost:3000
+
 ```
 
 You need to have a MongoDB server running before launching `npm start`. You can
