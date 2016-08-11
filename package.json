@@ -1,12 +1,12 @@
 {
-  "name": "hackathon-starter",
-  "version": "4.0.1",
+  "name": "front-end-test",
+  "version": "0.0.1",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sahat/hackathon-starter.git"
+    "url": "https://github.com/hect1c/front-end-test.git"
   },
   "scripts": {
-    "start": "nodemon app.js",
+    "start": "node app.js",
     "test": "mocha --reporter spec --timeout 5000"
   },
   "dependencies": {
